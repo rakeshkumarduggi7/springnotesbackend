@@ -10,6 +10,7 @@ public class loginservice {
 @Autowired
     unandpw loginrepo;
 
+
     public boolean logging(login l){
  if (loginrepo.valid(l.getUsername()).equals(l.getPassword())){
      return true;
