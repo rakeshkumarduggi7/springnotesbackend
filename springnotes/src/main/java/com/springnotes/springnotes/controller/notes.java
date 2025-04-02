@@ -21,7 +21,7 @@ public class notes {
     private String un="";
 
     @GetMapping("/get")
-    public List<String> get(){
+    public List<Object[]> get(){
         return ns.get(un);
     }
     @PostMapping("/login")
@@ -39,7 +39,7 @@ public void addnotes(@RequestBody notesonly notes){
         allnotes an=new allnotes();
         an.setUsername(un);
         an.setDate(LocalDateTime.now());
-        an.setNotes(ns.get(un).get(0)+" "+ notes.getNotes());
+        an.setNotes(ns.get(un).get(0)+" || "+ notes.getNotes());
 ns.addnotes(an);
     }
 

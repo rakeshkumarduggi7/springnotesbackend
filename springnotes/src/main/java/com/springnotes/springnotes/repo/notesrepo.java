@@ -11,8 +11,8 @@ import java.util.List;
 @Repository
 public interface notesrepo extends JpaRepository<allnotes,String> {
 
-    @Query(value = "select concat(notes,' ',date) from allnotes where username= :un order by date",nativeQuery = true)
-    List<String> getuserdata(@Param("un") String un);
+    @Query(value = "select notes,date from allnotes where username= :un order by date",nativeQuery = true)
+    List<Object[]> getuserdata(@Param("un") String un);
 
 
 }

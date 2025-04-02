@@ -12,7 +12,7 @@ public class notesservice {
     @Autowired
     notesrepo nrepo;
 
-    public List<String> get(String un){
+    public List<Object[]> get(String un){
 return nrepo.getuserdata(un);
     }
 
